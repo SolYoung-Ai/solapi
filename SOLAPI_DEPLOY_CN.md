@@ -167,8 +167,8 @@ Compose 已为应用配置 `/health` 健康检查（`start_period` 内不重启�
 
 ```bash
 cd deploy
-# 1. 修改 Caddyfile 第一行域名为你的真实域名
-#    api.sub2api.com → api.solyoung.top
+# 1. 确认 Caddyfile 第一行域名为你的真实域名（本仓库默认为 api.solyoung.top）
+#    如需更换：将 api.solyoung.top 改为你自己的域名
 
 # 2. 将 Caddyfile 放入 Caddy 数据目录或使用宿主机 Caddy
 caddy run --config Caddyfile
