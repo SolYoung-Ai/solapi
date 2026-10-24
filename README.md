@@ -1,5 +1,9 @@
 <div align="center">
 
+> **SolAPI**：SolYoung 出品的 AI API 中转平台，基于 Sub2API 改造的品牌化版本。
+> 中文部署与运维指南见 [SOLAPI_DEPLOY_CN.md](SOLAPI_DEPLOY_CN.md)。
+> 以下为上游项目原始 README（保留归属与完整说明）。
+
 <img src="assets/logo.svg" alt="Sub2API Logo" width="128" />
 
 # Sub2API

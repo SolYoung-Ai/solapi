@@ -15,8 +15,8 @@ export default {
     getStarted: '立即开始',
     goToDashboard: '进入控制台',
     // 新增：面向用户的价值主张
-    heroSubtitle: '一个密钥，畅用多个 AI 模型',
-    heroDescription: '无需管理多个订阅账号，一站式接入 Claude、GPT、Gemini 等主流 AI 服务',
+    heroSubtitle: '一个 API，连接你需要的 AI 模型',
+    heroDescription: '统一管理模型接入、API 密钥、请求用量与计费，专注构建你的产品。',
     tags: {
       subscriptionToApi: '订阅转 API',
       stickySession: '会话保持',
@@ -106,8 +106,17 @@ export default {
     // CTA 区块
     cta: {
       title: '准备好开始了吗？',
-      description: '注册即可获得免费试用额度，体验一站式 AI 服务',
+      description: '三步接入，几分钟内开始调用你需要的 AI 模型',
       button: '免费注册'
+    },
+    // 开始使用步骤
+    gettingStarted: {
+      step1Title: '注册账号',
+      step1Desc: '创建你的 SolAPI 账号，获得独立工作台',
+      step2Title: '创建 API 密钥',
+      step2Desc: '在控制台一键生成密钥，配置限额',
+      step3Title: '调用 AI 模型',
+      step3Desc: '通过 OpenAI 兼容接口接入你的应用'
     },
     footer: {
       allRightsReserved: '保留所有权利。'
@@ -192,8 +201,8 @@ export default {
 
   // Setup Wizard
   setup: {
-    title: 'Sub2API 安装向导',
-    description: '配置您的 Sub2API 实例',
+    title: 'SolAPI 安装向导',
+    description: '配置您的 SolAPI 实例',
     database: {
       title: '数据库配置',
       description: '连接到您的 PostgreSQL 数据库',

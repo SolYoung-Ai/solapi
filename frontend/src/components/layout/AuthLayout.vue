@@ -1,51 +1,48 @@
 <template>
   <div class="relative flex min-h-screen items-center justify-center overflow-hidden p-4">
-    <!-- Background -->
-    <div
-      class="absolute inset-0 bg-gradient-to-br from-gray-50 via-primary-50/30 to-gray-100 dark:from-dark-950 dark:via-dark-900 dark:to-dark-950"
-    ></div>
+    <!-- Background: 暖白基调 -->
+    <div class="absolute inset-0 bg-[#FAF8F4] dark:bg-dark-950"></div>
 
-    <!-- Decorative Elements -->
+    <!-- 细微暖橙氛围，克制不发光 -->
     <div class="pointer-events-none absolute inset-0 overflow-hidden">
-      <!-- Gradient Orbs -->
       <div
-        class="absolute -right-40 -top-40 h-80 w-80 rounded-full bg-primary-400/20 blur-3xl"
+        class="absolute -right-32 -top-32 h-72 w-72 rounded-full bg-primary-100/60 dark:bg-primary-900/20"
       ></div>
       <div
-        class="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-primary-500/15 blur-3xl"
+        class="absolute -bottom-32 -left-32 h-72 w-72 rounded-full bg-primary-50/80 dark:bg-primary-900/10"
       ></div>
-      <div
-        class="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-300/10 blur-3xl"
-      ></div>
-
-      <!-- Grid Pattern -->
-      <div
-        class="absolute inset-0 bg-[linear-gradient(rgba(20,184,166,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(20,184,166,0.03)_1px,transparent_1px)] bg-[size:64px_64px]"
-      ></div>
+      <!-- 顶部细线，SolYoung 编号式叙事 -->
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-200/70 to-transparent dark:via-primary-800/60"></div>
     </div>
 
     <!-- Content Container -->
     <div class="relative z-10 w-full max-w-md">
       <!-- Logo/Brand -->
       <div class="mb-8 text-center">
-        <!-- Custom Logo or Default Logo -->
         <template v-if="settingsLoaded">
           <div
-            class="mb-4 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl shadow-lg shadow-primary-500/30"
+            class="mx-auto mb-5 inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl shadow-card"
           >
             <img :src="siteLogo || '/logo.svg'" alt="Logo" class="h-full w-full object-contain" />
           </div>
-          <h1 class="text-gradient mb-2 text-3xl font-bold">
+          <p
+            class="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#B0A99C] dark:text-dark-400"
+          >
+            {{ siteName }} / {{ currentYear }}
+          </p>
+          <h1 class="text-2xl font-bold tracking-tight text-[#25241F] dark:text-dark-50">
             {{ siteName }}
           </h1>
-          <p class="text-sm text-gray-500 dark:text-dark-400">
+          <p class="mt-1.5 text-sm text-[#8F8779] dark:text-dark-400">
             {{ siteSubtitle }}
           </p>
         </template>
       </div>
 
       <!-- Card Container -->
-      <div class="card-glass rounded-2xl p-8 shadow-glass">
+      <div
+        class="rounded-2xl border border-[#EFEAE1] bg-white p-8 shadow-card dark:border-dark-700 dark:bg-dark-800"
+      >
         <slot />
       </div>
 
@@ -55,7 +52,7 @@
       </div>
 
       <!-- Copyright -->
-      <div class="mt-8 text-center text-xs text-gray-400 dark:text-dark-500">
+      <div class="mt-8 text-center text-xs text-[#B0A99C] dark:text-dark-500">
         &copy; {{ currentYear }} {{ siteName }}. All rights reserved.
       </div>
     </div>
@@ -69,9 +66,9 @@ import { sanitizeUrl } from '@/utils/url'
 
 const appStore = useAppStore()
 
-const siteName = computed(() => appStore.siteName || 'Sub2API')
+const siteName = computed(() => appStore.siteName || 'SolAPI')
 const siteLogo = computed(() => sanitizeUrl(appStore.siteLogo || '', { allowRelative: true, allowDataUrl: true }))
-const siteSubtitle = computed(() => appStore.cachedPublicSettings?.site_subtitle || 'Subscription to API Conversion Platform')
+const siteSubtitle = computed(() => appStore.cachedPublicSettings?.site_subtitle || 'AI API Relay Platform')
 const settingsLoaded = computed(() => appStore.publicSettingsLoaded)
 
 const currentYear = computed(() => new Date().getFullYear())
@@ -80,9 +77,3 @@ onMounted(() => {
   appStore.fetchPublicSettings()
 })
 </script>
-
-<style scoped>
-.text-gradient {
-  @apply bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent;
-}
-</style>

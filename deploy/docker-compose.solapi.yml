@@ -1,0 +1,27 @@
+# SolAPI 本地镜像覆盖配置
+
+# 本仓库（SolYoung-Ai/solapi）为 Sub2API 的独立改造分支，官方镜像 weishaw/sub2api
+# 与本仓库代码不一致。部署 SolAPI 时应基于本仓库源码本地构建镜像。
+#
+# 用法（以 docker-compose.local.yml 为例）：
+#
+#   1. 本地构建镜像：
+#      docker build -t solyoung/solapi:latest .
+#      （国内网络可加构建参数加速：
+#        --build-arg NPM_CONFIG_REGISTRY=https://registry.npmmirror.com ）
+#
+#   2. 复制环境变量模板并配置：
+#      cp .env.example .env
+#
+#   3. 以覆盖文件方式启动：
+#      docker compose -f docker-compose.local.yml -f docker-compose.solapi.yml up -d
+#
+#   4. 查看日志 / 停止：
+#      docker compose -f docker-compose.local.yml -f docker-compose.solapi.yml logs -f sub2api
+#      docker compose -f docker-compose.local.yml -f docker-compose.solapi.yml down
+#
+# 若使用 docker-compose.yml（命名卷版本），将下面对应的 compose 文件名替换即可。
+
+services:
+  sub2api:
+    image: solyoung/solapi:latest

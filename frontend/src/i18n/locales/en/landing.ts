@@ -15,8 +15,8 @@ export default {
     getStarted: 'Get Started',
     goToDashboard: 'Go to Dashboard',
     // User-focused value proposition
-    heroSubtitle: 'One Key, All AI Models',
-    heroDescription: 'No need to manage multiple subscriptions. Access Claude, GPT, Gemini and more with a single API key',
+    heroSubtitle: 'One API, every AI model you need',
+    heroDescription: 'Manage model access, API keys, usage and billing in one place — so you can focus on building.',
     tags: {
       subscriptionToApi: 'Subscription to API',
       stickySession: 'Session Persistence',
@@ -106,8 +106,17 @@ export default {
     // CTA section
     cta: {
       title: 'Ready to Get Started?',
-      description: 'Sign up now and get free trial credits to experience seamless AI access',
+      description: 'Three steps, and you can start calling the AI models you need within minutes',
       button: 'Sign Up Free'
+    },
+    // Getting started steps
+    gettingStarted: {
+      step1Title: 'Create an account',
+      step1Desc: 'Sign up for your SolAPI account and get your own workspace',
+      step2Title: 'Create an API key',
+      step2Desc: 'Generate a key in your console and set quotas',
+      step3Title: 'Call AI models',
+      step3Desc: 'Connect your apps through the OpenAI-compatible API'
     },
     footer: {
       allRightsReserved: 'All rights reserved.'
@@ -192,8 +201,8 @@ export default {
 
   // Setup Wizard
   setup: {
-    title: 'Sub2API Setup',
-    description: 'Configure your Sub2API instance',
+    title: 'SolAPI Setup',
+    description: 'Configure your SolAPI instance',
     database: {
       title: 'Database Configuration',
       description: 'Connect to your PostgreSQL database',

@@ -1,6 +1,10 @@
-# Sub2API Deployment Files
+# SolAPI Deployment Files
 
-This directory contains files for deploying Sub2API on Linux servers and Apple-silicon Macs.
+This directory contains files for deploying SolAPI (Sub2API 改造分支) on Linux servers and Apple-silicon Macs.
+
+> 注意：本仓库为独立改造分支，未发布官方镜像。Docker 部署请先按
+> [SOLAPI_DEPLOY_CN.md](../SOLAPI_DEPLOY_CN.md) 第 2 节基于源码本地构建镜像，
+> 并使用 `-f docker-compose.solapi.yml` 覆盖镜像名。
 
 ## Deployment Methods
 
